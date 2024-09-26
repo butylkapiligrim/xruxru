@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Category:
     name: str
     description: str
@@ -5,7 +8,7 @@ class Category:
     category_count = 0
     product_count = 0
 
-    def __init__(self, name, description, products):
+    def __init__(self, name: Any, description: Any, products: Any) -> None:
         self.name = name
         self.description = description
         self.products = products
