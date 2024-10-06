@@ -38,4 +38,3 @@ if __name__ == "__main__":
     test_price_setter_getter()
     test_category_creation()
     test_add_product_to_category()
-
