@@ -33,6 +33,10 @@ def test_add_product_to_category() -> None:
     assert category.products[0] == "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт."
 
 
+def test_price():
+    assert Product.price(0) == "Цена не должна быть нулевая или отрицательная"
+
+
 if __name__ == "__main__":
     test_product_creation()
     test_price_setter_getter()
