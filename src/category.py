@@ -12,7 +12,7 @@ class Category:
         self.name = name
         self.description = description
         self.__products = products
-        self.product_count = len(self.__products)
+        Category.product_count = len(self.__products)
         Category.category_count += 1
 
     def add_product(self, product: Any) -> None:
