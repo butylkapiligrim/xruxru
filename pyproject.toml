@@ -2,7 +2,7 @@
 name = "Артур прими пожалуйста"
 version = "0.1.0"
 description = ""
-authors = ["VelikiyAstmatic"]
+authors = ["NataliaYaiceedka"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
