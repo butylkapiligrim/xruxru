@@ -1,8 +1,6 @@
-from typing import Any
 from src.lawn_grass import LawnGrass
 from src.smartphone import Smartphone
 from src.product import Product
-
 
 
 class Category:
@@ -12,20 +10,24 @@ class Category:
     product_count = 0
     category_count = 0
 
-    def __init__(self, name: Any, description: Any, products: Any) -> None:
+    def __init__(self, name, description, products):
         self.name = name
         self.description = description
         self.__products = products
-        Category.product_count = len(self.__products)
+        self.product_count = len(products)
         Category.category_count += 1
 
-    def add_product(self, product: Any) -> None:
-        self.__products.append(product)
-        Category.product_count += 1
+    def __str__(self):
+        return f"{self.name}, количество продуктов: {self.product_count} шт."
+
+    def add_product(self, product):
+        if issubclass(type(product), Product) or isinstance(product, Product):
+            self.__products.append(product)
+            self.product_count += 1
 
     @property
-    def productss(self) -> str:
+    def products(self):
         product_list = []
         for product in self.__products:
-            product_list.append(f"{product.name}, {product._price} руб. Остаток: {product.quantity} шт.")
-        return "\n".join(product_list)
+            product_list.append(str(product))
+        return product_list
